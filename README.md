@@ -1,0 +1,4 @@
+- Global Exception Handling
+- Get all Postcodes with suburbs
+- Add a postcode and suburb
+- Retrieve a postcode with postcode or suburb query params
