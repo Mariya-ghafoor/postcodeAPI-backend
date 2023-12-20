@@ -36,7 +36,6 @@ public class PostcodeController {
 
   @PostMapping
   public ResponseEntity<Postcode> addPostcode(@Valid @RequestBody PostcodeCreateDTO postcode) {
-    System.out.println("^^^^^ in controller");
     Postcode newPostcode = this.postcodeService.addPostcode(postcode);
 
     return new ResponseEntity<>(newPostcode, HttpStatus.CREATED);
