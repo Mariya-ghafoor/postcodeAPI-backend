@@ -28,7 +28,7 @@ public class SecurityConfig {
         .csrf(CsrfConfigurer::disable)
         .exceptionHandling((exception) -> exception.authenticationEntryPoint(customAuthExceptionHandler))
         .authorizeHttpRequests((requests) -> requests
-            .requestMatchers("/postcodes").permitAll()
+            .requestMatchers("/postcodes/**").permitAll()
             .requestMatchers("/auth/**").permitAll()
             .requestMatchers("/auth/login").permitAll()
             .requestMatchers("/error").permitAll()

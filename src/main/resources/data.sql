@@ -38,7 +38,7 @@ CREATE TABLE `postcodes` (
 
 LOCK TABLES `postcodes` WRITE;
 /*!40000 ALTER TABLE `postcodes` DISABLE KEYS */;
-INSERT INTO `postcodes` VALUES (1,6447,'BARANGAROO'),(2,7936,'DARLING ISLAND'),(3,1852,'SURRY HILLS'),(4,6322,'ALEXANDRIA'),(5,3577,'WATERLOO'),(6,3287,'BRONTE');
+INSERT INTO `postcodes` VALUES (1,6447,'barangaroo'),(2,7936,'darling island'),(3,1852,'surry hills'),(4,6322,'alexandria'),(5,3577,'waterloo'),(6,3287,'bronte');
 
 -- INSERT INTO `postcodes` (postcode,suburb) VALUES (1,2000,'BARANGAROO')
 -- ,(2,2001,'SYDNEY')
