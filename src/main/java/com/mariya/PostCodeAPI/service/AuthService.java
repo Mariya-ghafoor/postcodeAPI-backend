@@ -1,6 +1,7 @@
 package com.mariya.PostCodeAPI.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -46,7 +47,6 @@ public class AuthService {
   }
 
   public AuthResponse login(LoginDTO data) {
-    System.out.println("LOGIN DATA RECEIEVED " + data.getUsername());
 
     UsernamePasswordAuthenticationToken userPassToken = new UsernamePasswordAuthenticationToken(data.getUsername(),
         data.getPassword());
@@ -63,5 +63,24 @@ public class AuthService {
     return new AuthResponse(token);
     // return user;
   }
+
+  // public ResponseEntity<?> login(LoginDTO data) {
+
+  //   UsernamePasswordAuthenticationToken userPassToken = new UsernamePasswordAuthenticationToken(data.getUsername(),
+  //       data.getPassword());
+
+  //   authenticationManager.authenticate(userPassToken);
+
+  //   User user = this.userService.getByUsername(data.getUsername());
+
+  //   if (user == null) {
+  //     return null;
+  //   }
+
+  //   String token = this.jwtService.generateToken(user);
+  //   return new ResponseEntity<>(null)
+  //   return new AuthResponse(token);
+  //   // return user;
+  // }
 
 }

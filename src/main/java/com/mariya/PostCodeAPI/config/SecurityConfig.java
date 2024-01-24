@@ -3,6 +3,7 @@ package com.mariya.PostCodeAPI.config;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configurers.CsrfConfigurer;
 import org.springframework.security.config.http.SessionCreationPolicy;
@@ -28,9 +29,10 @@ public class SecurityConfig {
         .csrf(CsrfConfigurer::disable)
         .exceptionHandling((exception) -> exception.authenticationEntryPoint(customAuthExceptionHandler))
         .authorizeHttpRequests((requests) -> requests
-            .requestMatchers("/postcodes/**").permitAll()
+            .requestMatchers(HttpMethod.GET,"/postcodes").permitAll()
+            //.requestMatchers("/postcodes/**").permitAll()
             .requestMatchers("/auth/**").permitAll()
-            .requestMatchers("/auth/login").permitAll()
+            // .requestMatchers("/auth/login").permitAll()
             .requestMatchers("/error").permitAll()
             .anyRequest().authenticated())
         .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class)

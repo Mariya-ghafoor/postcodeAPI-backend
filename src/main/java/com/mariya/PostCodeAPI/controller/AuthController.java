@@ -13,10 +13,13 @@ import com.mariya.PostCodeAPI.service.AuthService;
 import jakarta.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+
 
 @RestController
 @RequestMapping("/auth")
@@ -39,5 +42,18 @@ public class AuthController {
   public ResponseEntity<AuthResponse> login(@Valid @RequestBody LoginDTO data) {
     return new ResponseEntity<>(this.authService.login(data), HttpStatus.OK);
   }
+
+  
+  // @PostMapping("/login")
+  // public ResponseEntity<?> login(@Valid @RequestBody LoginDTO data) {
+  //   String token = this.authService.login(data).getToken(); 
+  //   //response.addCookie(new Cookie("access_token", token));
+  //   //return new ResponseEntity<>(HttpStatus.OK);
+
+  //   //import from the right package
+  //   HttpHeaders headers = new HttpHeaders();
+  //   headers.add("access_token",token);
+  //   return new ResponseEntity<>(headers,HttpStatus.OK);
+  // }
 
 }
