@@ -57,7 +57,7 @@
 - Register a user using username, email and password (/auth/register)
 - JWT based authentication
 - Login with credentials (/auth/login)
-- Only registered users are allowed to view suburbs or add new suburbs
+- Only registered users are allowed to add new suburbs
 
 ### Error Handling
 
@@ -65,6 +65,6 @@
 
 ## Future Goals
 
-- Map Update and Delete paths
-- Create frontend
-- Deploy on cloud
+[] Map Update and Delete paths
+[x] Create frontend
+[] Deploy on cloud
