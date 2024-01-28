@@ -65,6 +65,6 @@
 
 ## Future Goals
 
-- [] Map Update and Delete paths
+- [ ] Map Update and Delete paths
 - [x] Create frontend
-- [] Deploy on cloud
+- [ ] Deploy on cloud
