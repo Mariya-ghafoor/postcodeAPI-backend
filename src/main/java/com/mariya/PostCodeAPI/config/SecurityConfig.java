@@ -1,6 +1,7 @@
 package com.mariya.PostCodeAPI.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.actuate.autoconfigure.observation.ObservationProperties.Http;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
@@ -29,8 +30,10 @@ public class SecurityConfig {
         .csrf(CsrfConfigurer::disable)
         .exceptionHandling((exception) -> exception.authenticationEntryPoint(customAuthExceptionHandler))
         .authorizeHttpRequests((requests) -> requests
+            //.requestMatchers(HttpMethod.GET).hasAuthority("read")
+            
             .requestMatchers(HttpMethod.GET,"/postcodes").permitAll()
-            //.requestMatchers("/postcodes/**").permitAll()
+            .requestMatchers(HttpMethod.GET,"/postcodes/**").permitAll()
             .requestMatchers("/auth/**").permitAll()
             // .requestMatchers("/auth/login").permitAll()
             .requestMatchers("/error").permitAll()
